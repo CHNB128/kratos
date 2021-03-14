@@ -31,33 +31,34 @@ You can customize the sender address and email templates.
 ```yaml title="path/to/my/kratos/config.yml"
 # $ kratos -c path/to/my/kratos/config.yml serve
 courier:
-  ## SMTP Sender Address ##
-  #
-  # The recipient of an email will see this as the sender address.
-  #
-  # Default value: no-reply@ory.kratos.sh
-  #
-  # Set this value using environment variables on
-  # - Linux/macOS:
-  #    $ export COURIER_SMTP_FROM_ADDRESS=<value>
-  # - Windows Command Line (CMD):
-  #    > set COURIER_SMTP_FROM_ADDRESS=<value>
-  #
-  from_address: no-reply@ory.kratos.sh
-  ## Override message templates ##
-  #
-  # You can override certain or all message templates by pointing this key to the path where the templates are located.
-  #
-  # Examples:
-  # - /conf/courier-templates
-  #
-  # Set this value using environment variables on
-  # - Linux/macOS:
-  #    $ export COURIER_TEMPLATE_OVERRIDE_PATH=<value>
-  # - Windows Command Line (CMD):
-  #    > set COURIER_TEMPLATE_OVERRIDE_PATH=<value>
-  #
-  template_override_path: /conf/courier-templates
+  smtp:
+    ## SMTP Sender Address ##
+    #
+    # The recipient of an email will see this as the sender address.
+    #
+    # Default value: no-reply@ory.kratos.sh
+    #
+    # Set this value using environment variables on
+    # - Linux/macOS:
+    #    $ export COURIER_SMTP_FROM_ADDRESS=<value>
+    # - Windows Command Line (CMD):
+    #    > set COURIER_SMTP_FROM_ADDRESS=<value>
+    #
+    from_address: no-reply@ory.kratos.sh
+    ## Override message templates ##
+    #
+    # You can override certain or all message templates by pointing this key to the path where the templates are located.
+    #
+    # Examples:
+    # - /conf/courier-templates
+    #
+    # Set this value using environment variables on
+    # - Linux/macOS:
+    #    $ export COURIER_TEMPLATE_OVERRIDE_PATH=<value>
+    # - Windows Command Line (CMD):
+    #    > set COURIER_TEMPLATE_OVERRIDE_PATH=<value>
+    #
+    template_override_path: /conf/courier-templates
 ```
 
 `email.subject.gotmpl` and `email.body.gotmpl` are common template file names expected in remainder directories corresponding to respective methods for filling E-mail subject and body.
